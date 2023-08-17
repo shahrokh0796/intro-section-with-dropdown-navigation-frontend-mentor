@@ -59,16 +59,15 @@ a:hover, .login:hover, .register:hover {
 .header {
     margin-block: 1.5rem;
     margin-inline: 2.5rem;
-
-    border: 1px solid black;
 }
 
 .nav-logo {top: 0.44rem;} 
-.nav-toggle { top: 0.55rem;display: none;}
-
-.nav-toggle {
-  right: 0;
+.nav-toggle { 
+  top: 0.55rem;
+  display: none;
+  right: 0;  
 }
+
 
 
 .nav {
@@ -92,7 +91,7 @@ a:hover, .login:hover, .register:hover {
 }
 
 .nav-arrow-first {
-  margin-inline-start: 4.6rem;
+  margin-inline-start: 4.95rem;
   margin-block-start: -0.95rem;
 }
 .inner-nav-link {
@@ -107,7 +106,7 @@ a:hover, .login:hover, .register:hover {
 
 .inner-nav-link-img {
   block-size: 1rem;
-  margin-inline-end: 0.2rem;
+  margin-inline-end: 0.5rem;
   margin-block-start: 0.2rem;
 }
 
@@ -125,12 +124,13 @@ a:hover, .login:hover, .register:hover {
 
 #dropdown-products-second {
   display: none;
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
+  inline-size: 8rem;
 }
 
 
 .nav-arrow-second {
-  margin-inline-start: 4.9rem;
+  margin-inline-start: 5rem;
   margin-block-start: -0.95rem;
 }
 
@@ -156,5 +156,50 @@ a:hover, .login:hover, .register:hover {
 
 
 @media screen and (max-width: 900px) {
+  .header {
+    position: static;
+  }
+  .nav-toggle {
+    display: block;
+    
+    margin-block-start: 0.5rem;
+    margin-inline-end: 1rem;
+    inline-size: 2.2rem;
+    padding: 0.2rem;
+  }
+  .nav {
+    border: 2px solid orange;
+    position: absolute;
+    top:0; bottom: 0;
+    right: 0;
+    max-inline-size: 16.875rem;
+    inline-size:100%;
+    transform: translateX(100%);
+  }
+  .nav-container {
+    flex-direction:column;
+    margin-block-start: 5rem;
+    margin-inline: 1.5rem;
+  }
 
+  .dropdown-shadow {
+    box-shadow: none;
+  }
+
+  #dropdown-products-first {
+    margin-inline-start: 5rem;
+    margin-block-start: 1rem;
+  }
+
+  #dropdown-products-second {
+    margin-block-start: 1rem;
+  }
+
+  .nav-second {
+    flex-direction:column;
+    text-align: center;
+    inline-size: 100%;
+  }
+  .register, .login {inline-size: 100%;}
+  .nav-logo {margin-block-start:0.7rem}
 }
