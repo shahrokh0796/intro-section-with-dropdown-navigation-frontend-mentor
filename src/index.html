@@ -4,28 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
-
-  <header class="header relative">
+  <!-- <div class="main-container"> -->
+  <header class="header relative padding">
     <div class="nav-top-content">
       <div class="nav-logo absolute">
         <img src="./images/logo.svg" alt="logo">
@@ -34,9 +21,9 @@
         <img src="./images/icon-menu.svg" id="toggle-burger" alt="icon-menu">
       </div>
     </div>
-    <nav role="navigation" class="nav">
+    <nav class="nav">
       <menu class="nav-container">
-        <li class="nav-link" id="menu-products-one">
+        <li class="nav-link absolute" id="menu-products-one">
           <a href="#">
             Features
             <img class="nav-arrow-first" src="./images/icon-arrow-down.svg" alt="icon-arrow-up">
@@ -65,39 +52,56 @@
         </li>
 
 
-        <li class="nav-link" id="menu-products-two">
+        <li class="nav-link absolute" id="menu-products-two">
             <a href="#">Company</a>
             <img class="nav-arrow-second" src="./images/icon-arrow-down.svg" alt="icon-arrow-down">
           <menu class="inner-nav-second dropdown-shadow pd-mg-submenu radius" id="dropdown-products-second">
-            <li class="inner-nav-link"><a href="">History</a></li>
-            <li class="inner-nav-link"><a href="">Our Team</a></li>
-            <li class="inner-nav-link"><a href="">Blog</a></li>
+            <li class="inner-nav-link"><a href="#">History</a></li>
+            <li class="inner-nav-link"><a href="#">Our Team</a></li>
+            <li class="inner-nav-link"><a href="#">Blog</a></li>
           </menu>
         </li>
 
-        <li class="nav-link">
-          <a href="#">Careers</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">About</a>
-        </li>
+        <li class="nav-link career"> <a href="#">Careers</a></li>
+        <li class="nav-link about"><a href="#">About</a></li>
         <div class="nav-second">
-          <li class="login  nav-link">
-            <a href="#">Login</a>
-          </li>
-          <li class="register nav-link radius">
-            <a href="#" class="a">Register</a>
-          </li>
+          <li class="login  nav-link"><a href="#">Login</a></li>
+          <button class="btn"> <a href="#" class="a">Register</a> </button>
         </div>
       </menu>
     </nav>
   </header>
 
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main class="main">
+    <section class="section-left-content relative">
+          <div class="left-content">
+            <h1 class="heading"><span class="new-line">Make</span> remote work</h1>
+            <p class="description">
+              Get your team in sync, no matter your location.
+              Streamline processes, create team rituals, and 
+              watch productive soar.
+            </p>
+            
+            <div class="con-btn">
+              <button class="btn-2">
+                <a href="#">Learn More</a>
+              </button>
+            </div>
+            <div class="sponsers absolute">
+              <img src="./images/client-databiz.svg" alt="databiz">
+              <img src="./images/client-audiophile.svg" class="audiophile" alt="audiophile">
+              <img src="./images/client-meet.svg" alt="meet">
+              <img src="./images/client-maker.svg" alt="maker">
+            </div>
+          </div>
+    </section>
+    
+      <picture class="section-right-picture">
+        <source srcset="./images/image-hero-mobile.png" media="(max-width: 600px)" />
+        <img src="./images/image-hero-desktop.png" alt="image-hero" />
+      </picture>
+  </main>
+<!-- </div> -->
 </body>
 
 </html>
