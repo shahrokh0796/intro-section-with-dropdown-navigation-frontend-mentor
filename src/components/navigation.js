@@ -3,47 +3,35 @@ import closeNav from "../images/icon-menu.svg";
 import arrowUp from "../images/icon-arrow-up.svg";
 import arrowDown from "../images/icon-arrow-down.svg";
 
-
-const featuresDropDown = document.querySelector("#menu-products-one");
-const companyDropDown = document.querySelector("#menu-products-two");
-const featuresImg = document.querySelector(".nav-arrow-first");
-const companyImg = document.querySelector(".nav-arrow-second");
-const nav = document.querySelector(".nav");
-const toggleNav = document.querySelector(".nav-toggle");
-const toggleBurger = document.querySelector("#toggle-burger");
-
-function changeArrows (source, elem) {
-    let src = source;
-    elem.src = src;
-    return src;
+ 
+const navbar = document.querySelector(".navbar");
+const main = document.querySelector("main");
+const body = document.body;
+const navToggle = document.querySelector(".nav-toggle");
+const burgerImg = navToggle.firstElementChild.children[0];
+const navExpanded = navToggle.querySelector("button");
+console.log(navExpanded.ariaExpanded);
+function addNavBackShadow(ele) {
+    let bodey = ele;
+    bodey.classList.add("backgroundShadow");
+}
+function removNavBackShadow(ele) {
+    let bodey = ele;
+    bodey.classList.remove("backgroundShadow");
 }
 
-featuresDropDown.addEventListener("mouseover", () => {
-    changeArrows (arrowUp, featuresImg);
-});
 
-companyDropDown.addEventListener("mouseover", () => {
-    changeArrows (arrowUp, companyImg);
-});
-
-featuresDropDown.addEventListener("mouseout", () => {
-    changeArrows (arrowDown, featuresImg);
-});
-
-companyDropDown.addEventListener("mouseout", () => {
-    changeArrows (arrowDown, companyImg);
-});
-
-
-function responsiveNav() {
-    // debugger;
-    if (toggleBurger.src == closeNav) {
-        toggleBurger.src = openNav;
-        nav.classList.add("responsive");
+navToggle.addEventListener("click", (e) => {
+    navbar.classList.toggle("responsive");
+    if (burgerImg.src === `${openNav}`) {
+        burgerImg.src = `${closeNav}`;
+        navExpanded.ariaExpanded = false;
+        removNavBackShadow(body);
+        // removNavBackShadow(main);
     } else {
-        toggleBurger.src = closeNav;
-        nav.classList.remove("responsive");
-        console.log("remove");
+        burgerImg.src = `${openNav}`;
+        navExpanded.ariaExpanded = true;
+        addNavBackShadow(body);
+        // addNavBackShadow(main);
     }
-}
-toggleNav.addEventListener("click", responsiveNav);
+});

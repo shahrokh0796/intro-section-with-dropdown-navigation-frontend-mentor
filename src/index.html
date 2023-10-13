@@ -5,103 +5,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 </head>
 
-<body>
-  <!-- <div class="main-container"> -->
-  <header class="header relative padding">
-    <div class="nav-top-content">
-      <div class="nav-logo absolute">
-        <img src="./images/logo.svg" alt="logo">
+<body class="center-horizontal">
+  <div class="root">
+    <header class="header space-between relative">
+      <div class="site-logo">
+        <img src="./images/logo.svg" alt="snap">
       </div>
-      <div class="nav-toggle absolute">
-        <img src="./images/icon-menu.svg" id="toggle-burger" alt="icon-menu">
-      </div>
-    </div>
-    <nav class="nav">
-      <menu class="nav-container">
-        <li class="nav-link absolute" id="menu-products-one">
-          <a href="#">
-            Features
-            <img class="nav-arrow-first" src="./images/icon-arrow-down.svg" alt="icon-arrow-up">
-          </a>
-          <menu class="inner-nav-first dropdown-shadow pd-mg-submenu radius" id="dropdown-products-first">
-            <li class="inner-nav-link">
-              <img class="inner-nav-link-img" src="./images/icon-todo.svg" alt="icon-todo">
-              <a href="#">Todo List</a>
-            </li>
 
-            <li class="inner-nav-link">
-              <img class="inner-nav-link-img" src="./images/icon-calendar.svg" alt="icon-calendar">
-              <a href="#">Calender</a>
-            </li>
-
-            <li class="inner-nav-link">
-              <img class="inner-nav-link-img" src="./images/icon-reminders.svg" alt="icon-reminders">
-              <a href="#">Reminders</a>
-            </li>
-
-            <li class="inner-nav-link">
-              <img class="inner-nav-link-img" src="./images/icon-planning.svg" alt="icon-planning">
-              <a href="#">Todo List</a>
-            </li>
-          </menu>
-        </li>
-
-
-        <li class="nav-link absolute" id="menu-products-two">
-            <a href="#">Company</a>
-            <img class="nav-arrow-second" src="./images/icon-arrow-down.svg" alt="icon-arrow-down">
-          <menu class="inner-nav-second dropdown-shadow pd-mg-submenu radius" id="dropdown-products-second">
-            <li class="inner-nav-link"><a href="#">History</a></li>
-            <li class="inner-nav-link"><a href="#">Our Team</a></li>
-            <li class="inner-nav-link"><a href="#">Blog</a></li>
-          </menu>
-        </li>
-
-        <li class="nav-link career"> <a href="#">Careers</a></li>
-        <li class="nav-link about"><a href="#">About</a></li>
-        <div class="nav-second">
-          <li class="login  nav-link"><a href="#">Login</a></li>
-          <button class="btn"> <a href="#" class="a">Register</a> </button>
+      <nav class="navigation">
+        <div id="burger-div" class="nav-toggle btn-toggle absolute">
+          <button aria-label="Menu" aria-controls="main-navigation" class="toggle-btn btn" aria-expanded="false">
+            <img src="./images/icon-menu.svg" id="toggle-burger" alt="icon-menu" aria-hidden="">
+          </button>
         </div>
-      </menu>
-    </nav>
-  </header>
 
-  <main class="main">
-    <section class="section-left-content relative">
-          <div class="left-content">
-            <h1 class="heading"><span class="new-line">Make</span> remote work</h1>
-            <p class="description">
-              Get your team in sync, no matter your location.
-              Streamline processes, create team rituals, and 
-              watch productive soar.
-            </p>
-            
-            <div class="con-btn">
-              <button class="btn-2">
-                <a href="#">Learn More</a>
-              </button>
-            </div>
-            <div class="sponsers absolute">
-              <img src="./images/client-databiz.svg" alt="databiz">
-              <img src="./images/client-audiophile.svg" class="audiophile" alt="audiophile">
-              <img src="./images/client-meet.svg" alt="meet">
-              <img src="./images/client-maker.svg" alt="maker">
-            </div>
+        <ul role="list" id="main-navigation" aria-label="mainnavigation" class="navbar relative flex">
+          <li class="nav-link absolute feature" id="">
+            <button class="vh-center btn btn-dropdown-fe" aria-label="sub-menu" aria-expanded="false">
+              Features
+              <img class="dropdown-arrow" src="./images/icon-arrow-down.svg" alt="">
+            </button>
+
+            <ul role="list" class="sub-menu sub-menu-fe transform-x radius" id="">
+              
+              <li class="sub-menu-link flex">
+                <img class="decorative-icon" src="./images/icon-todo.svg" alt="">
+                <a href="#" aria-current="Todo list">Todo List</a>
+              </li>
+
+              <li class="sub-menu-link flex">
+                <img class="decorative-icon" src="./images/icon-calendar.svg" alt="">
+                <a href="#" aria-current="Calender">Calender</a>
+              </li>
+
+              <li class="sub-menu-link flex">
+                <img class="decorative-icon" src="./images/icon-reminders.svg" alt="">
+                <a href="#" aria-current="Reminders">Reminders</a>
+              </li>
+
+              <li class="sub-menu-link flex">
+                <img class="decorative-icon" src="./images/icon-planning.svg" alt="">
+                <a href="#" aria-current="Todo List">Todo List</a>
+              </li>
+
+            </ul>
+          </li>
+
+
+          <li class="nav-link absolute company">
+            <button aria-expanded="false" class="vh-center btn btn-dropdown-co" aria-label="sub-menu">Company
+              <img class="dropdown-arrow" src="./images/icon-arrow-down.svg" alt="">
+            </button>
+            <ul role="list" class="sub-menu radius" id="">
+              <li class="sub-menu-link"><a href="#" aria-current="History">History</a></li>
+              <li class="sub-menu-link"><a href="#" aria-current="Team">Our Team</a></li>
+              <li class="sub-menu-link"><a href="#" aria-current="Blog">Blog</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-link career"> <a href="#" aria-current="Careers">Careers</a></li>
+          <li class="nav-link about"><a href="#" aria-current="About">About</a></li>
+          <div class="login-and-register flex">
+            <li class="login  nav-link"><a href="#" aria-current="Login">Login</a></li>
+            <li class="register"><a href="#" aria-current="Register">Register</a></li>
           </div>
-    </section>
-    
-      <picture class="section-right-picture">
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main flex">
+      <section class="left-section relative center-vertical">
+        <div class="left-section-content">
+          <h1 class="heading"><span class="flex new-line">Make</span> remote work</h1>
+          <p class="description">
+            Get your team in sync, no matter your location.
+            Streamline processes, create team rituals, and
+            watch productive soar.
+          </p>
+
+          <div class="call-to-action-btn-div">
+            <button class="call-to-action-btn radius">
+              Learn More
+            </button>
+          </div>
+          <div class="sponsers absolute flex">
+            <img class="sponser-img" src="./images/client-databiz.svg" alt="">
+            <img class="sponser-img" src="./images/client-audiophile.svg" class="audiophile" alt="">
+            <img class="sponser-img" src="./images/client-meet.svg" alt="">
+            <img class="sponser-img" src="./images/client-maker.svg" alt="">
+          </div>
+        </div>
+      </section>
+
+      <picture class="right-section-hero">
         <source srcset="./images/image-hero-mobile.png" media="(max-width: 600px)" />
         <img src="./images/image-hero-desktop.png" alt="image-hero" />
       </picture>
-  </main>
-<!-- </div> -->
+    </main>
+  </div>
 </body>
 
 </html>
