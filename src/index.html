@@ -9,10 +9,13 @@
 </head>
 
 <body class="center-horizontal">
+  <div class="navshadow display-none absolute"></div>
   <div class="root">
     <header class="header space-between relative">
       <div class="site-logo">
+        <a href="/">
         <img src="./images/logo.svg" alt="snap">
+        </a>
       </div>
 
       <nav class="navigation">
@@ -22,14 +25,14 @@
           </button>
         </div>
 
-        <ul role="list" id="main-navigation" aria-label="mainnavigation" class="navbar relative flex">
+        <ul role="list" id="main-navigation" aria-label="main-navigation" class="navbar relative flex">
           <li class="nav-link absolute feature" id="">
-            <button class="vh-center btn btn-dropdown-fe" aria-label="sub-menu" aria-expanded="false">
+            <button class="vh-center btn btn-dropdown-fe" aria-label="sub-menu" aria-expanded="false" aria-controls="">
               Features
               <img class="dropdown-arrow" src="./images/icon-arrow-down.svg" alt="">
             </button>
 
-            <ul role="list" class="sub-menu sub-menu-fe transform-x radius" id="">
+            <ul role="list" class="sub-menu sub-menu-fe transform-x radius" id="features">
               
               <li class="sub-menu-link flex">
                 <img class="decorative-icon" src="./images/icon-todo.svg" alt="">
@@ -56,10 +59,10 @@
 
 
           <li class="nav-link absolute company">
-            <button aria-expanded="false" class="vh-center btn btn-dropdown-co" aria-label="sub-menu">Company
+            <button aria-expanded="false" class="vh-center btn btn-dropdown-co" aria-label="sub-menu" aria-controls="company">Company
               <img class="dropdown-arrow" src="./images/icon-arrow-down.svg" alt="">
             </button>
-            <ul role="list" class="sub-menu radius" id="">
+            <ul role="list" class="sub-menu radius" id="company">
               <li class="sub-menu-link"><a href="#" aria-current="History">History</a></li>
               <li class="sub-menu-link"><a href="#" aria-current="Team">Our Team</a></li>
               <li class="sub-menu-link"><a href="#" aria-current="Blog">Blog</a></li>
@@ -91,17 +94,17 @@
               Learn More
             </button>
           </div>
-          <div class="sponsers absolute flex">
-            <img class="sponser-img" src="./images/client-databiz.svg" alt="">
-            <img class="sponser-img" src="./images/client-audiophile.svg" class="audiophile" alt="">
-            <img class="sponser-img" src="./images/client-meet.svg" alt="">
-            <img class="sponser-img" src="./images/client-maker.svg" alt="">
-          </div>
+        </div>
+        <div class="sponsers absolute flex">
+          <img class="sponser-img" src="./images/client-databiz.svg" alt="">
+          <img class="sponser-img" src="./images/client-audiophile.svg" class="audiophile" alt="">
+          <img class="sponser-img" src="./images/client-meet.svg" alt="">
+          <img class="sponser-img" src="./images/client-maker.svg" alt="">
         </div>
       </section>
 
       <picture class="right-section-hero">
-        <source srcset="./images/image-hero-mobile.png" media="(max-width: 600px)" />
+        <source srcset="./images/image-hero-mobile.png" media="(max-width: 728px)" />
         <img src="./images/image-hero-desktop.png" alt="image-hero" />
       </picture>
     </main>

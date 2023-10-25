@@ -56,6 +56,8 @@
   .radius {
     border-radius: 0.8rem;
   }
+  #main-navigation .display-none {display:none;}
+  #main-navigation .display-block {display: block;}
 //   helper classes end point
 
 // global styles starting point
@@ -70,23 +72,23 @@ li {list-style-type: none;}
     background-color:var(--main-bg-color);;
   }
 
-  .root {}
 
   .header {
     inline-size: 100%;
     margin-block: 1rem;
     align-items: center;
     padding-inline: 2rem;
+    z-index: 1;
   }
 
   .site-logo {
     block-size: fit-content;
     min-inline-size: 6rem;
     padding: 0.3rem;
+    cursor: pointer;
   }
 
   .navigation {
-    margin: 2px;
     margin-inline-start: 5rem;
     inline-size: 100%;
   }
@@ -116,6 +118,7 @@ li {list-style-type: none;}
     border: none;
     padding-block: 0.32rem;
     background-color: transparent;
+    
   }
 
   .decorative-icon {
@@ -137,17 +140,17 @@ li {list-style-type: none;}
     padding: 1rem;
     display: none;
     box-shadow: 0px 0px 61px -19px rgba(0,0,0,0.75);
+    background-color: var(--main-bg-color);
     margin-block-start: 1.5rem;
     a:hover {
       color: var(--text-almost-black);
     }
   }
 
+  /*
   .feature:hover .sub-menu {
     display: block;
-  }
-
-
+  } */
  
 
   .feature:hover .dropdown-arrow, .company:hover .dropdown-arrow {
@@ -155,9 +158,11 @@ li {list-style-type: none;}
     transition: 0.5s ease-out;
   }
 
+  /*
   .company:hover .sub-menu {
     display: block;
   }
+  */
   .sub-menu-link {
     margin-block-end: 0.3rem;
   }
@@ -189,14 +194,12 @@ li {list-style-type: none;}
   }
   .login:hover a {color: var(--text-almost-black);}
 
- body, html {
-  min-block-size: 100%;
-  margin: 2px;
- }
 
 .navbar.responsive { 
   transform: translateX(0%);
 }
+
+/*==================min-inline-size: 27rem;=========================== */
 
 .main {
   margin-inline-start: 7rem;
@@ -204,23 +207,17 @@ li {list-style-type: none;}
   margin-block-start: 4rem;
 }
 
-.left-section {
-  margin: 2px;
-}
-
-.left-section-content {
-  margin: 2px;
-}
-
 .description {
   margin-block-end: 2.5rem;
-  inline-size: 27rem;
+  max-inline-size: 25rem;
+  color: var(--text-medium-gray);
 }
 
 .heading {
   font-size: 5rem;
   line-height: 1;
   margin-block-end: 3rem;
+  color: var(--text-almost-black);
 }
 
 .new-line {
@@ -232,7 +229,7 @@ li {list-style-type: none;}
 
 .sponsers {
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   inline-size: 100%;
   bottom: 0;
 }
@@ -264,19 +261,42 @@ li {list-style-type: none;}
   max-inline-size: 27rem;
   min-inline-size: 22rem;
 }
+
+
+/* ===============================================*/
+@media screen and (max-width: 1000px) {
+  .main {
+    margin-inline: 2rem; 
+  }
+  
+  .right-section-hero {
+    max-inline-size: 20rem;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .backgroundShadow {
     background-color: hsl(0 0% 8% / 0.7 );
   }
-  .root {}
+  .navshadow {
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
 
   .header {
     position: static;
   }
-  .navigation {
-  }
+ 
   .navbar {
     position: fixed;
+    z-index: 2;
     right: 0; top: 0; bottom:0;
     flex-direction: column;
     inline-size: 15.5rem;
@@ -297,7 +317,6 @@ li {list-style-type: none;}
   }
 
   .nav-link {
-    margin: 2px;
     position: static;
     margin-inline-start: 1rem;
     margin-block-end: 0.5rem;
@@ -311,7 +330,7 @@ li {list-style-type: none;}
 
   .nav-toggle {
     display: block;
-    z-index: 1;
+    z-index: 3;
     top: 1.5rem;
     right: 1rem;
     position: fixed;
@@ -333,3 +352,61 @@ li {list-style-type: none;}
     margin-inline: 0;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .right-section-hero {
+     min-inline-size: 13rem;
+     inline-size: 100%;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .left-section {
+    inline-size: 100%;
+  }
+}
+
+@media screen and (max-width: 728px) { 
+  .main {
+    display: flex;
+    inline-size: fit-content;
+    margin-inline: auto;
+    flex-direction: column;
+  }
+
+  .left-section {
+    order: 2;
+    margin-block-start: 2rem;
+    text-align: center;
+  }
+
+  .heading {
+    margin-block-end: 1rem;
+  }
+
+  .heading > span {
+    display: initial;
+  }
+
+  .description {
+    margin-block-end: 1rem;
+  }
+  .call-to-action-btn-div {
+    margin-block-end: 4rem;
+  }
+
+  .right-section-hero {
+    margin-inline: auto;
+  }
+
+  header {
+    margin-block-end: 0px;
+  }
+
+  .main {
+    margin-block-start: 0px;
+  }
+}
+
